@@ -3,190 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ── SEO ── -->
-  <title>Anandhu Pradeep — Certificates</title>
-  <meta name="description" content="Professional certificate gallery of Anandhu Pradeep — spanning programming, cloud, databases, web development, and more." />
-  <meta name="author" content="Anandhu Pradeep" />
-
-  <!-- ── Favicon ── -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
-
-  <!-- ── Google Fonts ── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- ── Stylesheet ── -->
+  <title>Anandhu Pradeep — Premium Certificates</title>
+  
+  <!-- Fonts: Space Grotesk for display, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- ══════════════════════════ HERO HEADER ══════════════════════════ -->
-  <header class="site-header">
-    <div class="top-nav">
-      <a href="https://portfolio.anandhupradeep.com/" class="btn-top-left">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M19 12H5M12 5l-7 7 7 7"/>
+  <!-- Premium Noise Texture -->
+  <div class="noise-overlay"></div>
+
+  <!-- Animated Glowing Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-cyan"></div>
+    <div class="orb orb-violet"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="https://portfolio.anandhupradeep.com/" class="back-link">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
         </svg>
         Back to Portfolio
       </a>
+    </nav>
+    
+    <div class="hero">
+      <div class="hero-badge">Verified Credentials</div>
+      <h1 class="hero-title">Certificate Showcase</h1>
+      <p class="hero-subtitle">A curated collection of professional achievements in software engineering, cloud computing, and advanced technologies.</p>
     </div>
-
-    <!-- Animated aurora orbs (CSS only) -->
-    <div class="aurora" aria-hidden="true">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-
-    <div class="header-content">
-      <p class="header-eyebrow">
-        <span class="eyebrow-dot"></span>
-        Verified Credentials
-      </p>
-
-      <h1 class="hero-name">Anandhu Pradeep</h1>
-
-      <p class="hero-tagline">
-        A curated gallery of professional certifications in software development,
-        cloud computing, databases &amp; beyond.
-      </p>
-
-      <!-- Live stats injected by JS -->
-      <div class="hero-stats" id="hero-stats" aria-label="Certificate statistics">
-        <div class="stat">
-          <span class="stat-n" id="s-total">—</span>
-          <span class="stat-l">Certificates</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-n" id="s-cats">—</span>
-          <span class="stat-l">Categories</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-n" id="s-issuers">—</span>
-          <span class="stat-l">Issuers</span>
-        </div>
-      </div>
-    </div>
+    
+    <!-- Dynamic Filter Buttons -->
+    <div class="filter-container" id="filter-container"></div>
   </header>
 
-  <!-- ══════════════════════════ FILTER BAR ══════════════════════════ -->
-  <section class="filter-section" aria-label="Filter by category">
-    <div class="filter-track">
-      <!-- Buttons injected by JS -->
-      <div class="filter-bar" id="filter-bar" role="group" aria-label="Category filters"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════ MAIN GRID ══════════════════════════ -->
-  <main class="gallery-main">
-
-    <!-- Loader -->
-    <div class="loader" id="loader" role="status">
-      <div class="loader-ring"></div>
-      <span>Loading certificates…</span>
-    </div>
-
-    <!-- Empty state -->
-    <div class="empty-state" id="empty-state" hidden>
-      <span class="empty-icon">🔍</span>
-      <p>No certificates found for this filter.</p>
-    </div>
-
-    <!-- Card grid — cards injected by JS -->
-    <div class="cert-grid" id="cert-grid" aria-label="Certificate gallery" hidden></div>
-
+  <main class="main-content">
+    <!-- Grid injected via JS -->
+    <div class="grid" id="cert-grid"></div>
   </main>
 
-  <!-- ══════════════════════════ FULLSCREEN DIALOG ══════════════════ -->
-  <!--
-    Role: dialog + aria-modal for accessibility.
-    Opened/closed via JS by toggling the .open class.
-  -->
-  <div
-    class="dialog-overlay"
-    id="dialog-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="dlg-title"
-    aria-hidden="true"
-  >
-    <!-- Glass panel -->
-    <div class="dialog-panel" id="dialog-panel">
+  <!-- Fullscreen Glass Dialog -->
+  <dialog class="cert-dialog" id="cert-dialog">
+    <div class="dialog-content">
+      <button class="close-btn" id="close-dialog" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Back</span>
+      </button>
 
-      <!-- ── Top bar ── -->
-      <div class="dialog-topbar">
-        <button class="btn-back" id="btn-back" aria-label="Close certificate view">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M19 12H5M12 5l-7 7 7 7"/>
-          </svg>
-          <span>Back</span>
-        </button>
-
-        <span class="dlg-topbar-badge" id="dlg-badge">—</span>
-      </div>
-
-      <!-- ── Certificate viewer ── -->
       <div class="dialog-body">
-
-        <!-- Left: PDF / preview -->
-        <div class="dlg-preview-wrap">
-          <div class="dlg-preview" id="dlg-preview">
-            <!-- PDF embed injected here by JS -->
-          </div>
-        </div>
-
-        <!-- Right: Info panel -->
-        <div class="dlg-info">
-          <h2 class="dlg-title" id="dlg-title">—</h2>
-          <p  class="dlg-about" id="dlg-about">—</p>
-
-          <div class="dlg-meta">
+        <!-- Preview Panel -->
+        <div class="dialog-preview" id="dialog-preview"></div>
+        
+        <!-- Info Panel -->
+        <div class="dialog-info">
+          <div class="dialog-badge" id="dialog-badge">Category</div>
+          <h2 class="dialog-title" id="dialog-title">Certificate Title</h2>
+          <p class="dialog-about" id="dialog-about">Details about this certificate.</p>
+          
+          <div class="dialog-meta">
             <div class="meta-item">
-              <span class="meta-icon">🏛️</span>
-              <div>
-                <span class="meta-label">Issued by</span>
-                <span class="meta-val"  id="dlg-issuer">—</span>
-              </div>
+              <span class="meta-label">Issuer</span>
+              <span class="meta-value" id="dialog-issuer">Issuer Name</span>
             </div>
             <div class="meta-item">
-              <span class="meta-icon">📅</span>
-              <div>
-                <span class="meta-label">Year</span>
-                <span class="meta-val"  id="dlg-date">—</span>
-              </div>
+              <span class="meta-label">Date</span>
+              <span class="meta-value" id="dialog-date">YYYY</span>
             </div>
           </div>
-
-          <a class="btn-download" id="dlg-download" href="#" download target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
+          
+          <a href="#" class="glow-btn" id="dialog-download" download target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
             Download Certificate
           </a>
         </div>
+      </div>
+    </div>
+  </dialog>
 
-      </div><!-- /.dialog-body -->
-
-      <!-- Swipe indicator (mobile) -->
-      <div class="swipe-handle" aria-hidden="true"></div>
-
-    </div><!-- /.dialog-panel -->
-  </div><!-- /.dialog-overlay -->
-
-  <!-- ══════════════════════════ FOOTER ══════════════════════════════ -->
-  <footer class="site-footer">
-    <p>© 2024 <strong>Anandhu Pradeep</strong> &nbsp;·&nbsp; Click any card to view details &nbsp;🎓</p>
-  </footer>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
