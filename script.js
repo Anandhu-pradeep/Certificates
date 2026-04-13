@@ -95,11 +95,8 @@ function renderCards(certs) {
     // Staggered entrance animation delay
     card.style.transitionDelay = `${(idx % 8) * 40}ms`;
     
-    const fileSrc = encodeURI(cert.image || cert.download || '');
-    const isPDF = fileSrc.toLowerCase().endsWith('.pdf');
-    const embedHtml = isPDF 
-      ? `<embed class="card-embed" src="${fileSrc}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" />`
-      : `<img class="card-embed" src="${fileSrc}" alt="${cert.title}" loading="lazy" />`;
+    const fileSrc = encodeURI(cert.image || '');
+    const embedHtml = `<img class="card-embed" src="${fileSrc}" alt="${cert.title}" loading="lazy" />`;
     
     card.innerHTML = `
       <div class="card-thumb">
@@ -177,14 +174,12 @@ function openDialog(cert) {
   dlgIssuer.textContent = cert.issuer;
   dlgDate.textContent = cert.date;
   
-  const fileUrl = encodeURI(cert.download || cert.image || '');
-  dlgDownload.href = fileUrl;
+  const fileUrl = encodeURI(cert.image || '');
+  const pdfUrl = encodeURI(cert.download || '');
+  dlgDownload.href = pdfUrl;
   dlgDownload.download = cert.title;
   
-  const isPDF = fileUrl.toLowerCase().endsWith('.pdf');
-  dlgPreview.innerHTML = isPDF 
-    ? `<embed src="${fileUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" />`
-    : `<img src="${fileUrl}" alt="${cert.title}" />`;
+  dlgPreview.innerHTML = `<img src="${fileUrl}" alt="${cert.title}" />`;
     
   dialog.showModal();
   document.body.style.overflow = 'hidden'; // Lock background scrolling
@@ -217,3 +212,97 @@ function closeAnim() {
     document.body.style.overflow = '';
   }, 400); // 400ms matches CSS transition
 }
+
+/* ══════════════════════════════════════════════════════════════
+   3D SPACE ENGINE (THREE.JS) - PORTFOLIO MATCH
+══════════════════════════════════════════════════════════════ */
+let mX = window.innerWidth / 2;
+let mY = window.innerHeight / 2;
+document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
+
+function initSpaceEngine() {
+  if (typeof THREE === 'undefined') return;
+
+  const sc = new THREE.Scene();
+  sc.fog = new THREE.FogExp2(0x020205, 0.0035);
+  const cam = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+  const rend = new THREE.WebGLRenderer({
+    canvas: document.getElementById('webgl-canvas'),
+    alpha: true,
+    antialias: true
+  });
+  rend.setSize(window.innerWidth, window.innerHeight);
+  rend.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // 1. Starfield
+  const sGeo = new THREE.BufferGeometry();
+  const sCount = window.innerWidth > 768 ? 4000 : 1500;
+  const pos = new Float32Array(sCount * 3), col = new Float32Array(sCount * 3);
+  for (let i = 0; i < sCount * 3; i += 3) {
+    pos[i] = (Math.random() - 0.5) * 300;
+    pos[i + 1] = (Math.random() - 0.5) * 300;
+    pos[i + 2] = (Math.random() - 0.5) * 300 - 50;
+    let rng = Math.random();
+    if (rng > 0.85) { col[i] = 0; col[i + 1] = 0.96; col[i + 2] = 1; }
+    else if (rng > 0.7) { col[i] = 0.54; col[i + 1] = 0.36; col[i + 2] = 0.96; }
+    else if (rng > 0.55) { col[i] = 1; col[i + 1] = 0.16; col[i + 2] = 0.52; }
+    else { col[i] = 1; col[i + 1] = 1; col[i + 2] = 1; }
+  }
+  sGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  sGeo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+
+  const cv = document.createElement('canvas'); cv.width = 16; cv.height = 16;
+  const ctx = cv.getContext('2d');
+  const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
+  grad.addColorStop(0, 'rgba(255,255,255,1)'); grad.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, 16, 16);
+  const starTex = new THREE.CanvasTexture(cv);
+
+  const sMat = new THREE.PointsMaterial({ size: 1.5, vertexColors: true, map: starTex, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false });
+  const starMesh = new THREE.Points(sGeo, sMat);
+  sc.add(starMesh);
+
+  const objs = [];
+  const glassM = new THREE.MeshPhysicalMaterial({ color: 0xffffff, transmission: 0.95, opacity: 1, metalness: 0.2, roughness: 0.1, ior: 1.5 });
+  const wireM = new THREE.MeshBasicMaterial({ color: 0x00f5ff, wireframe: true, transparent: true, opacity: 0.2 });
+  for (let i = 0; i < 30; i++) {
+    let isGeo = Math.random() > 0.5 ? new THREE.IcosahedronGeometry(Math.random() * 1.5 + 0.5, 0) : new THREE.TorusGeometry(Math.random() * 1.5 + 0.5, 0.4, 16, 32);
+    let m = new THREE.Mesh(isGeo, Math.random() > 0.6 ? wireM : glassM);
+    m.position.set((Math.random() - 0.5) * 80, (Math.random() - 0.5) * 80, (Math.random() - 0.5) * 200 - 80);
+    m.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+    m.userData = { rx: (Math.random() - 0.5) * 0.015, ry: (Math.random() - 0.5) * 0.015, zBase: m.position.z };
+    sc.add(m); objs.push(m);
+  }
+
+  const nGeo = new THREE.BufferGeometry();
+  const nPos = new Float32Array(500 * 3);
+  for (let i = 0; i < 1500; i += 3) { nPos[i] = (Math.random() - 0.5) * 150; nPos[i + 1] = (Math.random() - 0.5) * 150; nPos[i + 2] = (Math.random() - 0.5) * 100 - 50; }
+  nGeo.setAttribute('position', new THREE.BufferAttribute(nPos, 3));
+  const nMat = new THREE.PointsMaterial({ size: 30, color: 0x8b5cf6, map: starTex, transparent: true, opacity: 0.05, blending: THREE.AdditiveBlending, depthWrite: false });
+  const nebMesh = new THREE.Points(nGeo, nMat);
+  sc.add(nebMesh);
+
+  sc.add(new THREE.AmbientLight(0xffffff, 0.1));
+  const l1 = new THREE.PointLight(0x00f5ff, 2, 200); l1.position.set(20, 20, 10); sc.add(l1);
+  const l2 = new THREE.PointLight(0x8b5cf6, 2, 200); l2.position.set(-20, -20, -10); sc.add(l2);
+
+  window.addEventListener('resize', () => { cam.aspect = window.innerWidth / window.innerHeight; cam.updateProjectionMatrix(); rend.setSize(window.innerWidth, window.innerHeight); });
+
+  let tX3 = 0, tY3 = 0, sY = 0;
+  function anim3D() {
+    requestAnimationFrame(anim3D);
+    tX3 = (mX - window.innerWidth / 2) * 0.005;
+    tY3 = (mY - window.innerHeight / 2) * 0.005;
+    cam.position.x += (tX3 - cam.position.x) * 0.05;
+    cam.position.y += (-tY3 - cam.position.y) * 0.05;
+    sY += (window.scrollY * (-0.02) - cam.position.z) * 0.1;
+    cam.position.z = sY + 15;
+    cam.lookAt(sc.position);
+    starMesh.rotation.y = Date.now() * 0.00005;
+    objs.forEach(o => { o.rotation.x += o.userData.rx; o.rotation.y += o.userData.ry; if (o.position.z < o.userData.zBase) o.position.z += 0.1; });
+    rend.render(sc, cam);
+  }
+  anim3D();
+}
+
+document.addEventListener('DOMContentLoaded', () => { setTimeout(initSpaceEngine, 200); });

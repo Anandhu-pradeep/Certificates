@@ -6,7 +6,7 @@
     "date": "2024",
     "category": "Business & Administration",
     "about": "Completed the Career Essentials in Administrative Assistance learning path, covering core office and organizational skills.",
-    "image": "MyCertificates/(MAIN)Career Essentials in Administrative Assistance by Microsoft and LinkedIn.pdf",
+    "image": "CertificatePictures/(MAIN)Career Essentials in Administrative Assistance by Microsoft and LinkedIn.jpg",
     "download": "MyCertificates/(MAIN)Career Essentials in Administrative Assistance by Microsoft and LinkedIn.pdf"
   },
   {
@@ -16,7 +16,7 @@
     "date": "2024",
     "category": "Data Analysis",
     "about": "Completed the Career Essentials in Data Analysis learning path, developing skills in data interpretation and business intelligence.",
-    "image": "MyCertificates/(MAIN)Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf",
+    "image": "CertificatePictures/(MAIN)Career Essentials in Data Analysis by Microsoft and LinkedIn.jpg",
     "download": "MyCertificates/(MAIN)Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf"
   },
   {
@@ -26,7 +26,7 @@
     "date": "2024",
     "category": "Project Management",
     "about": "Completed the Career Essentials in Project Management learning path, covering Agile, planning, and delivery fundamentals.",
-    "image": "MyCertificates/(MAIN)Career Essentials in Project Management by Microsoft and LinkedIn.pdf",
+    "image": "CertificatePictures/(MAIN)Career Essentials in Project Management by Microsoft and LinkedIn.jpg",
     "download": "MyCertificates/(MAIN)Career Essentials in Project Management by Microsoft and LinkedIn.pdf"
   },
   {
@@ -36,7 +36,7 @@
     "date": "2024",
     "category": "Programming",
     "about": "Completed the Career Essentials in Software Development learning path, covering programming basics and software engineering practices.",
-    "image": "MyCertificates/(MAIN)Career Essentials in Software Development by Microsoft and LinkedIn.pdf",
+    "image": "CertificatePictures/(MAIN)Career Essentials in Software Development by Microsoft and LinkedIn.jpg",
     "download": "MyCertificates/(MAIN)Career Essentials in Software Development by Microsoft and LinkedIn.pdf"
   },
   {
@@ -46,7 +46,7 @@
     "date": "2023",
     "category": "Programming",
     "about": "Earned a certificate in Python basics, covering variables, loops, functions, and fundamental programming concepts.",
-    "image": "MyCertificates/Basic of python.pdf",
+    "image": "CertificatePictures/Basic of python.jpg",
     "download": "MyCertificates/Basic of python.pdf"
   },
   {
@@ -56,7 +56,7 @@
     "date": "2024",
     "category": "Business & Administration",
     "about": "Completed the Career Essentials in Business Analysis learning path, covering requirements gathering and process improvement.",
-    "image": "MyCertificates/Career Essentials in Business Analysis by Microsoft and LinkedIn.pdf",
+    "image": "CertificatePictures/Career Essentials in Business Analysis by Microsoft and LinkedIn.jpg",
     "download": "MyCertificates/Career Essentials in Business Analysis by Microsoft and LinkedIn.pdf"
   },
   {
@@ -66,17 +66,17 @@
     "date": "2024",
     "category": "System Administration",
     "about": "Completed the Career Essentials in System Administration learning path, covering IT infrastructure and system management.",
-    "image": "MyCertificates/Career Essentials in System Administration by Microsoft and LinkedIn (1).pdf",
+    "image": "CertificatePictures/Career Essentials in System Administration by Microsoft and LinkedIn (1).jpg",
     "download": "MyCertificates/Career Essentials in System Administration by Microsoft and LinkedIn (1).pdf"
   },
   {
     "id": 8,
-    "title": "Database Management System from Scratch – Part 2",
+    "title": "Database Management System from Scratch \u2013 Part 2",
     "issuer": "Udemy Academy",
     "date": "2023",
     "category": "Computer Science",
     "about": "Completed the second part of Discrete Mathematics and Structures, covering graph theory, combinatorics, and logic.",
-    "image": "MyCertificates/DMS(part-2).pdf",
+    "image": "CertificatePictures/DMS(part-2).jpg",
     "download": "MyCertificates/DMS(part-2).pdf"
   },
   {
@@ -86,7 +86,7 @@
     "date": "2023",
     "category": "Computer Science",
     "about": "Completed Discrete Mathematics and Structures, covering set theory, propositional logic, and proof techniques.",
-    "image": "MyCertificates/DMS.pdf",
+    "image": "CertificatePictures/DMS.jpg",
     "download": "MyCertificates/DMS.pdf"
   },
   {
@@ -96,7 +96,7 @@
     "date": "2023",
     "category": "Database",
     "about": "Mastered SQL fundamentals including DDL, DML, joins, subqueries, and relational database design concepts.",
-    "image": "MyCertificates/DataBase and SQL.pdf",
+    "image": "CertificatePictures/DataBase and SQL.jpg",
     "download": "MyCertificates/DataBase and SQL.pdf"
   },
   {
@@ -106,7 +106,7 @@
     "date": "2024",
     "category": "Cloud",
     "about": "Gained foundational knowledge in cloud computing, covering IaaS, PaaS, SaaS, and major cloud service providers.",
-    "image": "MyCertificates/Introduction to Cloud Computing.pdf",
+    "image": "CertificatePictures/Introduction to Cloud Computing.jpg",
     "download": "MyCertificates/Introduction to Cloud Computing.pdf"
   },
   {
@@ -116,17 +116,17 @@
     "date": "2023",
     "category": "Programming",
     "about": "Completed Java programming course covering OOP concepts, data structures, exception handling, and collections framework.",
-    "image": "MyCertificates/Java.pdf",
+    "image": "CertificatePictures/Java.jpg",
     "download": "MyCertificates/Java.pdf"
   },
   {
     "id": 13,
-    "title": "Master Android – Become an App Developer",
+    "title": "Master Android \u2013 Become an App Developer",
     "issuer": "Infosys Springboard",
     "date": "2024",
     "category": "Mobile Development",
     "about": "Completed an advanced Android development course covering Activities, Fragments, APIs, and publishing to Google Play Store.",
-    "image": "MyCertificates/Master Android - Become an App Developer.pdf",
+    "image": "CertificatePictures/Master Android - Become an App Developer.jpg",
     "download": "MyCertificates/Master Android - Become an App Developer.pdf"
   },
   {
@@ -136,7 +136,7 @@
     "date": "2024",
     "category": "Mobile Development",
     "about": "Built foundational Android app development skills including UI design, event handling, and Android Studio usage.",
-    "image": "MyCertificates/Mobile App Development Building a Basic Android App.pdf",
+    "image": "CertificatePictures/Mobile App Development Building a Basic Android App.jpg",
     "download": "MyCertificates/Mobile App Development Building a Basic Android App.pdf"
   },
   {
@@ -146,27 +146,27 @@
     "date": "2024",
     "category": "Hackathon",
     "about": "Participated in the NASA International Space Apps Challenge, collaborating to solve real-world space exploration problems.",
-    "image": "MyCertificates/NASA Space Apps Challenge.pdf",
+    "image": "CertificatePictures/NASA Space Apps Challenge.jpg",
     "download": "MyCertificates/NASA Space Apps Challenge.pdf"
   },
   {
     "id": 16,
-    "title": "Programming Fundamentals Using Python – Part 1",
+    "title": "Programming Fundamentals Using Python \u2013 Part 1",
     "issuer": "Infosys Springboard",
     "date": "2023",
     "category": "Programming",
     "about": "Covered Python programming fundamentals including data types, conditionals, loops, and basic problem solving.",
-    "image": "MyCertificates/PGM Fundamental using python-part 1.pdf",
+    "image": "CertificatePictures/PGM Fundamental using python-part 1.jpg",
     "download": "MyCertificates/PGM Fundamental using python-part 1.pdf"
   },
   {
     "id": 17,
-    "title": "Programming Fundamentals Using Python – Part 2",
+    "title": "Programming Fundamentals Using Python \u2013 Part 2",
     "issuer": "Infosys Springboard",
     "date": "2023",
     "category": "Programming",
     "about": "Advanced Python programming concepts including file handling, OOP, modules, and error handling.",
-    "image": "MyCertificates/PGM Fundamental using python-part 2.pdf",
+    "image": "CertificatePictures/PGM Fundamental using python-part 2.jpg",
     "download": "MyCertificates/PGM Fundamental using python-part 2.pdf"
   },
   {
@@ -176,7 +176,7 @@
     "date": "2024",
     "category": "Database",
     "about": "Explored Relational Database Management Systems and Microsoft Fabric SQL for modern data warehousing and analytics.",
-    "image": "MyCertificates/RDBMS & Microsoft fabric SQL.pdf",
+    "image": "CertificatePictures/RDBMS & Microsoft fabric SQL.jpg",
     "download": "MyCertificates/RDBMS & Microsoft fabric SQL.pdf"
   },
   {
@@ -186,7 +186,7 @@
     "date": "2023",
     "category": "Web Development",
     "about": "Earned the Responsive Web Design certification, mastering HTML, CSS, Flexbox, Grid, and accessible design principles.",
-    "image": "MyCertificates/Responsive Web Design.pdf",
+    "image": "CertificatePictures/Responsive Web Design.jpg",
     "download": "MyCertificates/Responsive Web Design.pdf"
   },
   {
@@ -196,7 +196,7 @@
     "date": "2023",
     "category": "Programming",
     "about": "Completed C and C++ programming course covering procedural programming, pointers, memory management, and OOP in C++.",
-    "image": "MyCertificates/c and c++.pdf",
+    "image": "CertificatePictures/c and c++.jpg",
     "download": "MyCertificates/c and c++.pdf"
   },
   {
@@ -206,7 +206,7 @@
     "date": "2023",
     "category": "Web Development",
     "about": "Learned jQuery for DOM manipulation, event handling, AJAX calls, and dynamic UI interactions in web applications.",
-    "image": "MyCertificates/jqquery.pdf",
+    "image": "CertificatePictures/jqquery.jpg",
     "download": "MyCertificates/jqquery.pdf"
   },
   {
@@ -216,7 +216,7 @@
     "date": "2023",
     "category": "Web Development",
     "about": "Completed PHP programming course covering server-side scripting, form handling, sessions, and MySQL integration.",
-    "image": "MyCertificates/php.pdf",
+    "image": "CertificatePictures/php.jpg",
     "download": "MyCertificates/php.pdf"
   },
   {
@@ -226,7 +226,7 @@
     "date": "2023",
     "category": "Programming",
     "about": "Comprehensive Python programming certification covering advanced topics including decorators, generators, and libraries.",
-    "image": "MyCertificates/python.pdf",
+    "image": "CertificatePictures/python.jpg",
     "download": "MyCertificates/python.pdf"
   },
   {
@@ -236,7 +236,7 @@
     "date": "2024",
     "category": "Cloud",
     "about": "Completed cloud computing curriculum provided by AWS Academy, covering core AWS services and cloud architecture.",
-    "image": "MyCertificates/AWSAcademy.pdf",
+    "image": "CertificatePictures/AWSAcademy.jpg",
     "download": "MyCertificates/AWSAcademy.pdf"
   },
   {
@@ -246,7 +246,7 @@
     "date": "2023",
     "category": "Computer Science",
     "about": "Learned foundational concepts of data structures, arrays, linked lists, and basic algorithmic efficiency.",
-    "image": "MyCertificates/Basics of Data Structures and Algorithms.pdf",
+    "image": "CertificatePictures/Basics of Data Structures and Algorithms.jpg",
     "download": "MyCertificates/Basics of Data Structures and Algorithms.pdf"
   },
   {
@@ -256,7 +256,7 @@
     "date": "2024",
     "category": "Computer Science",
     "about": "Mastered core data structures and algorithmic problem-solving techniques for software development.",
-    "image": "MyCertificates/Data Structures and Algorithms.pdf",
+    "image": "CertificatePictures/Data Structures and Algorithms.jpg",
     "download": "MyCertificates/Data Structures and Algorithms.pdf"
   },
   {
@@ -266,7 +266,7 @@
     "date": "2024",
     "category": "Computer Science",
     "about": "Explored data structures and algorithms using functional programming paradigms.",
-    "image": "MyCertificates/Functional Data Structures and Algorithms.pdf",
+    "image": "CertificatePictures/Functional Data Structures and Algorithms.jpg",
     "download": "MyCertificates/Functional Data Structures and Algorithms.pdf"
   },
   {
@@ -276,7 +276,7 @@
     "date": "2024",
     "category": "Programming",
     "about": "Applied data structures and algorithmic concepts specifically within the Python programming ecosystem.",
-    "image": "MyCertificates/Python Data Structures and Algorithms.pdf",
+    "image": "CertificatePictures/Python Data Structures and Algorithms.jpg",
     "download": "MyCertificates/Python Data Structures and Algorithms.pdf"
   },
   {
@@ -286,7 +286,7 @@
     "date": "2023",
     "category": "Web Development",
     "about": "Gained a solid understanding of HTML, semantic web structure, and web best practices.",
-    "image": "MyCertificates/html.pdf",
+    "image": "CertificatePictures/html.jpg",
     "download": "MyCertificates/html.pdf"
   },
   {
@@ -296,7 +296,17 @@
     "date": "2023",
     "category": "Web Development",
     "about": "Learned the basics of PHP scripting, server-side web development, and dynamic content generation.",
-    "image": "MyCertificates/Introduction to php.pdf",
+    "image": "CertificatePictures/Introduction to php.jpg",
     "download": "MyCertificates/Introduction to php.pdf"
+  },
+  {
+    "id": 31,
+    "title": "10th Standard Certificate",
+    "issuer": "Board of Public Examinations",
+    "date": "2021",
+    "category": "Education",
+    "about": "Secondary School Leaving Certificate.",
+    "image": "CertificatePictures/10th Certificate .jpg",
+    "download": "MyCertificates/10th Certificate .pdf"
   }
 ]
