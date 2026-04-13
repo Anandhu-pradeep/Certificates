@@ -298,15 +298,5 @@
     "about": "Learned the basics of PHP scripting, server-side web development, and dynamic content generation.",
     "image": "CertificatePictures/Introduction to php.jpg",
     "download": "MyCertificates/Introduction to php.pdf"
-  },
-  {
-    "id": 31,
-    "title": "10th Standard Certificate",
-    "issuer": "Board of Public Examinations",
-    "date": "2021",
-    "category": "Education",
-    "about": "Secondary School Leaving Certificate.",
-    "image": "CertificatePictures/10th Certificate .jpg",
-    "download": "MyCertificates/10th Certificate .pdf"
   }
 ]
