@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "title": "Career Essentials in Administrative Assistance",
+    "issuer": "Microsoft & LinkedIn",
+    "date": "2024",
+    "category": "Business & Administration",
+    "about": "Completed the Career Essentials in Administrative Assistance learning path, covering core office and organizational skills.",
+    "image": "MyCertificates/(MAIN)Career Essentials in Administrative Assistance by Microsoft and LinkedIn.pdf",
+    "download": "MyCertificates/(MAIN)Career Essentials in Administrative Assistance by Microsoft and LinkedIn.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Career Essentials in Data Analysis",
+    "issuer": "Microsoft & LinkedIn",
+    "date": "2024",
+    "category": "Data Analysis",
+    "about": "Completed the Career Essentials in Data Analysis learning path, developing skills in data interpretation and business intelligence.",
+    "image": "MyCertificates/(MAIN)Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf",
+    "download": "MyCertificates/(MAIN)Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf"
+  },
+  {
+    "id": 3,
+    "title": "Career Essentials in Project Management",
+    "issuer": "Microsoft & LinkedIn",
+    "date": "2024",
+    "category": "Project Management",
+    "about": "Completed the Career Essentials in Project Management learning path, covering Agile, planning, and delivery fundamentals.",
+    "image": "MyCertificates/(MAIN)Career Essentials in Project Management by Microsoft and LinkedIn.pdf",
+    "download": "MyCertificates/(MAIN)Career Essentials in Project Management by Microsoft and LinkedIn.pdf"
+  },
+  {
+    "id": 4,
+    "title": "Career Essentials in Software Development",
+    "issuer": "Microsoft & LinkedIn",
+    "date": "2024",
+    "category": "Programming",
+    "about": "Completed the Career Essentials in Software Development learning path, covering programming basics and software engineering practices.",
+    "image": "MyCertificates/(MAIN)Career Essentials in Software Development by Microsoft and LinkedIn.pdf",
+    "download": "MyCertificates/(MAIN)Career Essentials in Software Development by Microsoft and LinkedIn.pdf"
+  },
+  {
+    "id": 5,
+    "title": "Basics of Python",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Programming",
+    "about": "Earned a certificate in Python basics, covering variables, loops, functions, and fundamental programming concepts.",
+    "image": "MyCertificates/Basic of python.pdf",
+    "download": "MyCertificates/Basic of python.pdf"
+  },
+  {
+    "id": 6,
+    "title": "Career Essentials in Business Analysis",
+    "issuer": "Microsoft & LinkedIn",
+    "date": "2024",
+    "category": "Business & Administration",
+    "about": "Completed the Career Essentials in Business Analysis learning path, covering requirements gathering and process improvement.",
+    "image": "MyCertificates/Career Essentials in Business Analysis by Microsoft and LinkedIn.pdf",
+    "download": "MyCertificates/Career Essentials in Business Analysis by Microsoft and LinkedIn.pdf"
+  },
+  {
+    "id": 7,
+    "title": "Career Essentials in System Administration",
+    "issuer": "Microsoft & LinkedIn",
+    "date": "2024",
+    "category": "System Administration",
+    "about": "Completed the Career Essentials in System Administration learning path, covering IT infrastructure and system management.",
+    "image": "MyCertificates/Career Essentials in System Administration by Microsoft and LinkedIn (1).pdf",
+    "download": "MyCertificates/Career Essentials in System Administration by Microsoft and LinkedIn (1).pdf"
+  },
+  {
+    "id": 8,
+    "title": "Database Management System from Scratch – Part 2",
+    "issuer": "Udemy Academy",
+    "date": "2023",
+    "category": "Computer Science",
+    "about": "Completed the second part of Discrete Mathematics and Structures, covering graph theory, combinatorics, and logic.",
+    "image": "MyCertificates/DMS(part-2).pdf",
+    "download": "MyCertificates/DMS(part-2).pdf"
+  },
+  {
+    "id": 9,
+    "title": "Database Management System",
+    "issuer": "Udemy Academy",
+    "date": "2023",
+    "category": "Computer Science",
+    "about": "Completed Discrete Mathematics and Structures, covering set theory, propositional logic, and proof techniques.",
+    "image": "MyCertificates/DMS.pdf",
+    "download": "MyCertificates/DMS.pdf"
+  },
+  {
+    "id": 10,
+    "title": "Database and SQL",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Database",
+    "about": "Mastered SQL fundamentals including DDL, DML, joins, subqueries, and relational database design concepts.",
+    "image": "MyCertificates/DataBase and SQL.pdf",
+    "download": "MyCertificates/DataBase and SQL.pdf"
+  },
+  {
+    "id": 11,
+    "title": "Introduction to Cloud Computing",
+    "issuer": "Simplilearn",
+    "date": "2024",
+    "category": "Cloud",
+    "about": "Gained foundational knowledge in cloud computing, covering IaaS, PaaS, SaaS, and major cloud service providers.",
+    "image": "MyCertificates/Introduction to Cloud Computing.pdf",
+    "download": "MyCertificates/Introduction to Cloud Computing.pdf"
+  },
+  {
+    "id": 12,
+    "title": "Java Programming",
+    "issuer": "Eversume Institute",
+    "date": "2023",
+    "category": "Programming",
+    "about": "Completed Java programming course covering OOP concepts, data structures, exception handling, and collections framework.",
+    "image": "MyCertificates/Java.pdf",
+    "download": "MyCertificates/Java.pdf"
+  },
+  {
+    "id": 13,
+    "title": "Master Android – Become an App Developer",
+    "issuer": "Infosys Springboard",
+    "date": "2024",
+    "category": "Mobile Development",
+    "about": "Completed an advanced Android development course covering Activities, Fragments, APIs, and publishing to Google Play Store.",
+    "image": "MyCertificates/Master Android - Become an App Developer.pdf",
+    "download": "MyCertificates/Master Android - Become an App Developer.pdf"
+  },
+  {
+    "id": 14,
+    "title": "Mobile App Development: Building a Basic Android App",
+    "issuer": "Infosys Springboard",
+    "date": "2024",
+    "category": "Mobile Development",
+    "about": "Built foundational Android app development skills including UI design, event handling, and Android Studio usage.",
+    "image": "MyCertificates/Mobile App Development Building a Basic Android App.pdf",
+    "download": "MyCertificates/Mobile App Development Building a Basic Android App.pdf"
+  },
+  {
+    "id": 15,
+    "title": "NASA Space Apps Challenge",
+    "issuer": "NASA",
+    "date": "2024",
+    "category": "Hackathon",
+    "about": "Participated in the NASA International Space Apps Challenge, collaborating to solve real-world space exploration problems.",
+    "image": "MyCertificates/NASA Space Apps Challenge.pdf",
+    "download": "MyCertificates/NASA Space Apps Challenge.pdf"
+  },
+  {
+    "id": 16,
+    "title": "Programming Fundamentals Using Python – Part 1",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Programming",
+    "about": "Covered Python programming fundamentals including data types, conditionals, loops, and basic problem solving.",
+    "image": "MyCertificates/PGM Fundamental using python-part 1.pdf",
+    "download": "MyCertificates/PGM Fundamental using python-part 1.pdf"
+  },
+  {
+    "id": 17,
+    "title": "Programming Fundamentals Using Python – Part 2",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Programming",
+    "about": "Advanced Python programming concepts including file handling, OOP, modules, and error handling.",
+    "image": "MyCertificates/PGM Fundamental using python-part 2.pdf",
+    "download": "MyCertificates/PGM Fundamental using python-part 2.pdf"
+  },
+  {
+    "id": 18,
+    "title": "RDBMS & Microsoft Fabric SQL",
+    "issuer": "Udemy Academy",
+    "date": "2024",
+    "category": "Database",
+    "about": "Explored Relational Database Management Systems and Microsoft Fabric SQL for modern data warehousing and analytics.",
+    "image": "MyCertificates/RDBMS & Microsoft fabric SQL.pdf",
+    "download": "MyCertificates/RDBMS & Microsoft fabric SQL.pdf"
+  },
+  {
+    "id": 19,
+    "title": "Responsive Web Design",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Web Development",
+    "about": "Earned the Responsive Web Design certification, mastering HTML, CSS, Flexbox, Grid, and accessible design principles.",
+    "image": "MyCertificates/Responsive Web Design.pdf",
+    "download": "MyCertificates/Responsive Web Design.pdf"
+  },
+  {
+    "id": 20,
+    "title": "C and C++ Programming",
+    "issuer": "Eversume Institute",
+    "date": "2023",
+    "category": "Programming",
+    "about": "Completed C and C++ programming course covering procedural programming, pointers, memory management, and OOP in C++.",
+    "image": "MyCertificates/c and c++.pdf",
+    "download": "MyCertificates/c and c++.pdf"
+  },
+  {
+    "id": 21,
+    "title": "jQuery",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Web Development",
+    "about": "Learned jQuery for DOM manipulation, event handling, AJAX calls, and dynamic UI interactions in web applications.",
+    "image": "MyCertificates/jqquery.pdf",
+    "download": "MyCertificates/jqquery.pdf"
+  },
+  {
+    "id": 22,
+    "title": "PHP Programming",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Web Development",
+    "about": "Completed PHP programming course covering server-side scripting, form handling, sessions, and MySQL integration.",
+    "image": "MyCertificates/php.pdf",
+    "download": "MyCertificates/php.pdf"
+  },
+  {
+    "id": 23,
+    "title": "Python Programming",
+    "issuer": "Eversume Institute",
+    "date": "2023",
+    "category": "Programming",
+    "about": "Comprehensive Python programming certification covering advanced topics including decorators, generators, and libraries.",
+    "image": "MyCertificates/python.pdf",
+    "download": "MyCertificates/python.pdf"
+  },
+  {
+    "id": 24,
+    "title": "AWS Academy Cloud Foundations",
+    "issuer": "AWS Academy",
+    "date": "2024",
+    "category": "Cloud",
+    "about": "Completed cloud computing curriculum provided by AWS Academy, covering core AWS services and cloud architecture.",
+    "image": "MyCertificates/AWSAcademy.pdf",
+    "download": "MyCertificates/AWSAcademy.pdf"
+  },
+  {
+    "id": 25,
+    "title": "Basics of Data Structures and Algorithms",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Computer Science",
+    "about": "Learned foundational concepts of data structures, arrays, linked lists, and basic algorithmic efficiency.",
+    "image": "MyCertificates/Basics of Data Structures and Algorithms.pdf",
+    "download": "MyCertificates/Basics of Data Structures and Algorithms.pdf"
+  },
+  {
+    "id": 26,
+    "title": "Data Structures and Algorithms",
+    "issuer": "Infosys Springboard",
+    "date": "2024",
+    "category": "Computer Science",
+    "about": "Mastered core data structures and algorithmic problem-solving techniques for software development.",
+    "image": "MyCertificates/Data Structures and Algorithms.pdf",
+    "download": "MyCertificates/Data Structures and Algorithms.pdf"
+  },
+  {
+    "id": 27,
+    "title": "Functional Data Structures and Algorithms",
+    "issuer": "Infosys Springboard",
+    "date": "2024",
+    "category": "Computer Science",
+    "about": "Explored data structures and algorithms using functional programming paradigms.",
+    "image": "MyCertificates/Functional Data Structures and Algorithms.pdf",
+    "download": "MyCertificates/Functional Data Structures and Algorithms.pdf"
+  },
+  {
+    "id": 28,
+    "title": "Python Data Structures and Algorithms",
+    "issuer": "Infosys Springboard",
+    "date": "2024",
+    "category": "Programming",
+    "about": "Applied data structures and algorithmic concepts specifically within the Python programming ecosystem.",
+    "image": "MyCertificates/Python Data Structures and Algorithms.pdf",
+    "download": "MyCertificates/Python Data Structures and Algorithms.pdf"
+  },
+  {
+    "id": 29,
+    "title": "HTML Fundamentals",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Web Development",
+    "about": "Gained a solid understanding of HTML, semantic web structure, and web best practices.",
+    "image": "MyCertificates/html.pdf",
+    "download": "MyCertificates/html.pdf"
+  },
+  {
+    "id": 30,
+    "title": "Introduction to PHP",
+    "issuer": "Infosys Springboard",
+    "date": "2023",
+    "category": "Web Development",
+    "about": "Learned the basics of PHP scripting, server-side web development, and dynamic content generation.",
+    "image": "MyCertificates/Introduction to php.pdf",
+    "download": "MyCertificates/Introduction to php.pdf"
+  }
+]
