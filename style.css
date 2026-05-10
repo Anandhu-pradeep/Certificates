@@ -35,14 +35,28 @@ body {
   min-height: 100vh;
 }
 
-/* WebGL Container */
-#webgl-canvas {
+/* Static Premium Background */
+.static-premium-bg {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
   z-index: -5;
   pointer-events: none;
-  background: #020205; /* Deep space base */
+  background-color: #1a0b2e; /* Deep vibrant base */
+  overflow: hidden;
+}
+.static-premium-bg::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(108, 92, 231, 1) 0%, transparent 30%),
+    radial-gradient(circle at 70% 20%, rgba(0, 240, 255, 0.9) 0%, transparent 35%),
+    radial-gradient(circle at 40% 70%, rgba(255, 0, 122, 0.9) 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(255, 153, 0, 0.8) 0%, transparent 35%);
+  filter: blur(100px);
+  opacity: 0.85;
 }
 
 /* Hero Grid Background */
@@ -86,41 +100,7 @@ body {
 /* Cursor elements hidden by default as they use the SVG cursor above */
 .cursor-dot, .cursor-trail { display: none; }
 
-/* Background animated orbs */
-.bg-orbs {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.3;
-  animation: float 20s infinite ease-in-out alternate;
-}
-.orb-cyan {
-  top: -15%;
-  left: -10%;
-  width: 45vw;
-  height: 45vw;
-  background-color: var(--accent-cyan);
-}
-.orb-violet {
-  bottom: -15%;
-  right: -10%;
-  width: 55vw;
-  height: 55vw;
-  background-color: var(--accent-violet);
-  animation-delay: -10s;
-}
 
-@keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(8%, 12%) scale(1.15); }
-}
 
 /* Header & Typography */
 .header {
