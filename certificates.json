@@ -298,5 +298,16 @@
     "about": "Learned the basics of PHP scripting, server-side web development, and dynamic content generation.",
     "image": "CertificatePictures/Introduction to php.jpg",
     "download": "MyCertificates/Introduction to php.pdf"
+  },
+  {
+    "id": 1778409646804,
+    "title": "Database Management System (DBMS) & SQL  Complete Pack",
+    "about": "“Database Management System (DBMS) & SQL : Complete Pack” course offered by Infosys Springboard. This certification validates my knowledge of DBMS concepts, SQL queries, and relational database management.",
+    "issuer": "Infosys Springboard",
+    "date": "2026",
+    "category": "Database",
+    "image": "CertificatePictures/Database Management System (DBMS) & SQL  Complete Pack.pdf",
+    "download": "MyCertificates/Database Management System (DBMS) & SQL  Complete Pack.pdf"
   }
+
 ]
