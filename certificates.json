@@ -308,6 +308,27 @@
     "category": "Database",
     "image": "CertificatePictures/Database Management System (DBMS) & SQL Complete Pack.jpg",
     "download": "MyCertificates/Database Management System (DBMS) & SQL Complete Pack.pdf"
+  },
+  {
+    "id": 1779690173124,
+    "title": "Blockchain and its Applictions",
+    "about": "Blockchain is a technology used to store data in a secure and decentralized way.\nIt works like a digital ledger where information is stored in blocks, and each block is connected to the previous one forming a chain. Once data is added, it is very difficult to change or hack.",
+    "issuer": "NPTEL-Swayam",
+    "date": "2026",
+    "category": "Cloud",
+    "image": "CertificatePictures/Nptel-Blockchain and its Applictions.jpg",
+    "download": "MyCertificates/Nptel-Blockchain and its Applictions.pdf"
+  },
+  {
+    "id": 1779690288962,
+    "title": "Machine Learning for Engineering and Science Applications",
+    "about": "Machine Learning is a branch of Artificial Intelligence (AI) that allows computers to learn from data and improve automatically without being explicitly programmed. Machine learning systems analyze data, identify patterns, and make predictions or decisions.",
+    "issuer": "NPTEL-Swayam",
+    "date": "2026",
+    "category": "Cloud",
+    "image": "CertificatePictures/Nptel-Machine Learning for Engineering and Science.jpg",
+    "download": "MyCertificates/Nptel-Machine Learning for Engineering and Science.pdf"
   }
 
+  
 ]
