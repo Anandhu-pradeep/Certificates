@@ -187,6 +187,12 @@ function openDialog(cert) {
     title="Click to view fullscreen"
   />`;
 
+  // Ensure lightbox is closed and cleared before showing new cert
+  lightboxOverlay.classList.remove('open');
+  lightboxOverlay.setAttribute('aria-hidden', 'true');
+  lightboxImg.src = '';
+  lbReset();
+
   // Make the image clickable — opens lightbox
   const previewImg = dlgPreview.querySelector('img');
   if (previewImg) {
@@ -210,10 +216,15 @@ function setupDialogClose() {
     }
   });
 
-  // Handle native ESC cleanly with animation
+  // Handle native ESC / system back button on mobile
+  // If lightbox is open: close lightbox only. Otherwise close dialog.
   dialog.addEventListener('cancel', (e) => {
     e.preventDefault(); // Stop immediate native close
-    closeAnim();
+    if (lightboxOverlay.classList.contains('open')) {
+      closeLightbox();
+    } else {
+      closeAnim();
+    }
   });
 }
 
@@ -276,6 +287,8 @@ function closeLightbox() {
   lightboxOverlay.classList.remove('open');
   lightboxOverlay.setAttribute('aria-hidden', 'true');
   lbReset();
+  // Clear src after fade-out so stale image never flashes on next open
+  setTimeout(() => { lightboxImg.src = ''; }, 320);
 }
 
 function setupLightbox() {
