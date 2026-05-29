@@ -533,6 +533,174 @@ body {
   box-shadow: 0 8px 32px rgba(108, 92, 231, 0.5);
 }
 
+/* ── Clickable preview image (opens lightbox) ─────────────────── */
+.dlg-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+}
+
+.dialog-preview {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Eye icon hint on hover */
+.dialog-preview::after {
+  content: ''; 
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.dialog-preview:hover::after {
+  opacity: 1;
+}
+
+.dialog-preview:hover .dlg-preview-img {
+  transform: scale(1.03);
+  filter: brightness(0.85);
+}
+
+/* ══════════════════════════════════════════════════
+   LIGHTBOX  (inside dialog — position:absolute fills the dialog viewport)
+══════════════════════════════════════════════════ */
+.lightbox-overlay {
+  position: absolute;   /* absolute inside the dialog (dialog = full viewport) */
+  inset: 0;
+  z-index: 100;         /* above dialog content */
+  background: rgba(3, 3, 10, 0.97);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+/* ← Back button (top-left) */
+.lightbox-back-btn {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.65rem 1.3rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
+  z-index: 20;
+}
+.lightbox-back-btn:hover {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  transform: translateX(-4px);
+}
+
+/* Zoom level badge (top-right) */
+.lightbox-zoom-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  backdrop-filter: blur(12px);
+  z-index: 20;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+/* Hint bar (bottom-centre) */
+.lightbox-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* Image wrapper — fills the overlay, centres the image */
+.lightbox-img-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem 3.5rem;
+  overflow: hidden;
+}
+
+/* The image itself */
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 60px rgba(0, 240, 255, 0.05);
+  cursor: zoom-in;
+  /* NO transition on transform — zoom/pan must feel instant */
+  transition: opacity 0.35s ease;
+  opacity: 0;
+  transform-origin: center center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-overlay.open .lightbox-img {
+  opacity: 1;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .dialog-body {
@@ -553,4 +721,8 @@ body {
   .close-btn { top: 1.25rem; left: 1.25rem; padding: 0.5rem 1rem; }
   .dialog-title { font-size: 2rem; }
   .dialog-preview { height: 300px; }
+  .lightbox-back-btn { top: 0.9rem; left: 0.9rem; padding: 0.5rem 1rem; font-size: 0.82rem; }
+  .lightbox-zoom-badge { top: 0.9rem; right: 0.9rem; }
+  .lightbox-hint { display: none; }
+  .lightbox-img-wrap { padding: 3.5rem 1rem 2.5rem; }
 }

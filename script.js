@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', init);
 async function init() {
   await loadData();
   setupDialogClose();
+  setupLightbox();
 }
 
 async function loadData() {
@@ -179,7 +180,21 @@ function openDialog(cert) {
   dlgDownload.href = pdfUrl;
   dlgDownload.download = cert.title;
   
-  dlgPreview.innerHTML = `<img src="${fileUrl}" alt="${cert.title}" />`;
+  dlgPreview.innerHTML = `<img
+    src="${fileUrl}"
+    alt="${cert.title}"
+    class="dlg-preview-img"
+    title="Click to view fullscreen"
+  />`;
+
+  // Make the image clickable — opens lightbox
+  const previewImg = dlgPreview.querySelector('img');
+  if (previewImg) {
+    previewImg.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent dialog backdrop-click from firing
+      openLightbox(fileUrl, cert.title);
+    });
+  }
     
   dialog.showModal();
   document.body.style.overflow = 'hidden'; // Lock background scrolling
@@ -213,3 +228,174 @@ function closeAnim() {
   }, 400); // 400ms matches CSS transition
 }
 
+/* ────────────────────────────────────────────────────────────
+   LIGHTBOX  (inside dialog → same top-layer, zoom + pan support)
+─────────────────────────────────────────────────────────── */
+const lightboxOverlay  = document.getElementById('lightbox-overlay');
+const lightboxImg      = document.getElementById('lightbox-img');
+const lightboxImgWrap  = document.getElementById('lightbox-img-wrap');
+const lightboxBackBtn  = document.getElementById('lightbox-back-btn');
+const lightboxZoomBadge= document.getElementById('lightbox-zoom-badge');
+
+// Zoom / pan state
+let lbScale   = 1;
+let lbOffsetX = 0;
+let lbOffsetY = 0;
+let lbDragging= false;
+let lbDragStartX = 0;
+let lbDragStartY = 0;
+let lbLastX  = 0;
+let lbLastY  = 0;
+
+const LB_MIN = 1;
+const LB_MAX = 5;
+
+function lbApplyTransform() {
+  lightboxImg.style.transform =
+    `translate(${lbOffsetX}px, ${lbOffsetY}px) scale(${lbScale})`;
+  lightboxZoomBadge.textContent = Math.round(lbScale * 100) + '%';
+  lightboxImg.style.cursor = lbScale > 1 ? 'grab' : 'zoom-in';
+}
+
+function lbReset() {
+  lbScale   = 1;
+  lbOffsetX = 0;
+  lbOffsetY = 0;
+  lbApplyTransform();
+}
+
+function openLightbox(src, alt) {
+  lbReset();
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || 'Certificate';
+  lightboxOverlay.classList.add('open');
+  lightboxOverlay.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox() {
+  lightboxOverlay.classList.remove('open');
+  lightboxOverlay.setAttribute('aria-hidden', 'true');
+  lbReset();
+}
+
+function setupLightbox() {
+  /* ─ Back button ─ */
+  lightboxBackBtn.addEventListener('click', closeLightbox);
+
+  /* ─ Click dark background to close (only when not dragging) ─ */
+  lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay || e.target === lightboxImgWrap) {
+      closeLightbox();
+    }
+  });
+
+  /* ─ Stop image click propagating to lightbox/dialog backdrop ─ */
+  lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+
+  /* ─ Escape: close lightbox, not dialog ─ */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxOverlay.classList.contains('open')) {
+      e.stopImmediatePropagation();
+      closeLightbox();
+    }
+  }, true); // capture phase so it wins over the dialog's cancel handler
+
+  /* ──────────  MOUSE WHEEL ZOOM  ────────── */
+  lightboxOverlay.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.15 : 0.15;
+    const prev  = lbScale;
+    lbScale = Math.min(LB_MAX, Math.max(LB_MIN, lbScale + delta));
+
+    // Zoom toward the mouse cursor position
+    const rect  = lightboxImg.getBoundingClientRect();
+    const px    = e.clientX - rect.left - rect.width  / 2;
+    const py    = e.clientY - rect.top  - rect.height / 2;
+    const ratio = lbScale / prev;
+    lbOffsetX   = ratio * (lbOffsetX + px) - px;
+    lbOffsetY   = ratio * (lbOffsetY + py) - py;
+
+    if (lbScale === LB_MIN) { lbOffsetX = 0; lbOffsetY = 0; }
+    lbApplyTransform();
+  }, { passive: false });
+
+  /* ──────────  DRAG TO PAN  ────────── */
+  lightboxImg.addEventListener('mousedown', (e) => {
+    if (lbScale <= 1) return;
+    e.preventDefault();
+    lbDragging = true;
+    lbDragStartX = e.clientX - lbOffsetX;
+    lbDragStartY = e.clientY - lbOffsetY;
+    lightboxImg.style.cursor = 'grabbing';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!lbDragging) return;
+    lbOffsetX = e.clientX - lbDragStartX;
+    lbOffsetY = e.clientY - lbDragStartY;
+    lbApplyTransform();
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!lbDragging) return;
+    lbDragging = false;
+    lightboxImg.style.cursor = lbScale > 1 ? 'grab' : 'zoom-in';
+  });
+
+  /* ──────────  DOUBLE-CLICK RESET  ────────── */
+  lightboxImg.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    if (lbScale > 1) {
+      lbReset();
+    } else {
+      // zoom to 2.5× toward clicked point
+      const rect = lightboxImg.getBoundingClientRect();
+      const px = e.clientX - rect.left - rect.width  / 2;
+      const py = e.clientY - rect.top  - rect.height / 2;
+      lbScale   = 2.5;
+      lbOffsetX = -px * (lbScale - 1);
+      lbOffsetY = -py * (lbScale - 1);
+      lbApplyTransform();
+    }
+  });
+
+  /* ──────────  PINCH TO ZOOM (touch)  ────────── */
+  let lastPinchDist = null;
+
+  lightboxOverlay.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      lastPinchDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+    } else if (e.touches.length === 1 && lbScale > 1) {
+      lbDragging   = true;
+      lbDragStartX = e.touches[0].clientX - lbOffsetX;
+      lbDragStartY = e.touches[0].clientY - lbOffsetY;
+    }
+  }, { passive: true });
+
+  lightboxOverlay.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if (e.touches.length === 2 && lastPinchDist !== null) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const delta = (dist - lastPinchDist) * 0.01;
+      lbScale = Math.min(LB_MAX, Math.max(LB_MIN, lbScale + delta));
+      lastPinchDist = dist;
+      if (lbScale === LB_MIN) { lbOffsetX = 0; lbOffsetY = 0; }
+      lbApplyTransform();
+    } else if (e.touches.length === 1 && lbDragging) {
+      lbOffsetX = e.touches[0].clientX - lbDragStartX;
+      lbOffsetY = e.touches[0].clientY - lbDragStartY;
+      lbApplyTransform();
+    }
+  }, { passive: false });
+
+  lightboxOverlay.addEventListener('touchend', (e) => {
+    if (e.touches.length < 2) lastPinchDist = null;
+    if (e.touches.length === 0) lbDragging = false;
+  }, { passive: true });
+}
