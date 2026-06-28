@@ -328,7 +328,26 @@
     "category": "Cloud",
     "image": "CertificatePictures/Nptel-Machine Learning for Engineering and Science.jpg",
     "download": "MyCertificates/Nptel-Machine Learning for Engineering and Science.pdf"
+  },
+  {
+    "id": 1782621800761,
+    "title": "IEDC",
+    "about": "Awarded a Certificate of Appreciation for active participation in the Smart India Hackathon 2025 (Institute Level), showcasing innovation, teamwork, and problem-solving skills in developing technology-driven solutions.",
+    "issuer": "Smart India Hackathon",
+    "date": "2025",
+    "category": "Hackathon",
+    "image": "CertificatePictures/IEDC .jpg",
+    "download": "MyCertificates/IEDC .pdf"
+  },
+  {
+    "id": 1782622046015,
+    "title": "Stitch to Antigravity with GitHub Dev Workshop",
+    "about": "Received a Certificate of Appreciation for coordinating the **“Stitch to Antigravity with GitHub Dev Workshop”** at Amal Jyothi College of Engineering, contributing to technical event management and knowledge-sharing in modern development workflows.",
+    "issuer": "Department of Computer Applications, Amal Jyothi College of Engineering,",
+    "date": "2026",
+    "category": "Programming",
+    "image": "CertificatePictures/Stitch to Antigravity with GitHub Dev Workshop.jpg",
+    "download": "MyCertificates/Stitch to Antigravity with GitHub Dev Workshop.pdf"
   }
-
   
 ]
