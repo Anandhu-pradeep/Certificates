@@ -348,6 +348,16 @@
     "category": "Programming",
     "image": "CertificatePictures/Stitch to Antigravity with GitHub Dev Workshop.jpg",
     "download": "MyCertificates/Stitch to Antigravity with GitHub Dev Workshop.pdf"
+  },
+  {
+    "id": 31,
+    "title": "Deep Dive into API Gateway and Building a Serverless Application",
+    "issuer": "Infosys Springboard",
+    "date": "2026",
+    "category": "Cloud",
+    "about": "Learn how API Gateways manage and route requests while building a scalable, event-driven serverless application using cloud functions and managed services.",
+    "image": "CertificatePictures/Deep Dive into API Gateway and Building a Serverless Application.jpg",
+    "download": "MyCertificates/Deep Dive into API Gateway and Building a Serverless Application.pdf"
   }
   
 ]
