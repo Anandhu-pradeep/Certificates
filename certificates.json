@@ -358,6 +358,45 @@
     "about": "Learn how API Gateways manage and route requests while building a scalable, event-driven serverless application using cloud functions and managed services.",
     "image": "CertificatePictures/Deep Dive into API Gateway and Building a Serverless Application.jpg",
     "download": "MyCertificates/Deep Dive into API Gateway and Building a Serverless Application.pdf"
+  },
+  {
+    "id": 34,
+    "title": "Internet of Things",
+    "issuer": "Infosys Springboard",
+    "date": "2026",
+    "category": "IoT",
+    "about": "Learn the fundamentals of the Internet of Things (IoT), including connected devices, sensors, communication technologies, and real-world IoT applications.",
+    "image": "CertificatePictures/Internet of Things.jpg",
+    "download": "MyCertificates/Internet of Things.pdf"
+  },
+  {
+    "id": 35,
+    "title": "Internet of Things 101",
+    "issuer": "Infosys Springboard",
+    "date": "2026",
+    "category": "IoT",
+    "about": "Learn the fundamentals of the Internet of Things (IoT), including connected devices, sensors, communication technologies, and real-world IoT applications.",
+    "image": "CertificatePictures/Internet of Things 101.jpg",
+    "download": "MyCertificates/Internet of Things 101.pdf"
+  },
+  {
+    "id": 36,
+    "title": "Kubernetes in 7 Days",
+    "issuer": "Infosys Springboard",
+    "date": "2026",
+    "category": "Cloud",
+    "about": "Learn the fundamentals of Kubernetes, container orchestration, deployments, services, scaling, and managing containerized applications.",
+    "image": "CertificatePictures/Kubernetes in 7 Days.jpg",
+    "download": "MyCertificates/Kubernetes in 7 Days.pdf"
+  },
+  {
+    "id": 37,
+    "title": "Docker - A Better Way to Build Apps",
+    "issuer": "Infosys Springboard",
+    "date": "2026",
+    "category": "Cloud",
+    "about": "Learn how Docker simplifies application development and deployment using containers, images, and containerized application workflows.",
+    "image": "CertificatePictures/Docker - A Better Way to Build Apps.jpg",
+    "download": "MyCertificates/Docker - A Better Way to Build Apps.pdf"
   }
-  
 ]
